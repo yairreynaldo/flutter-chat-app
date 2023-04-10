@@ -15,7 +15,7 @@ class CustomLogo extends StatelessWidget {
           children: [
             const Image(image: AssetImage('assets/tag-logo.png')),
             const SizedBox(height: 20),
-            Text(titulo, style: TextStyle(fontSize: 30)),
+            Text(titulo, style: const TextStyle(fontSize: 30)),
           ],
         ),
       ),
