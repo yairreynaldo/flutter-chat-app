@@ -1,7 +1,7 @@
-import 'dart:io';
+//import 'dart:io';
 
 import 'package:chat/widgets/chat_message.dart';
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatefulWidget {
@@ -112,7 +112,6 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
 
   _handleSubmit(String texto) {
     if (texto.isEmpty) return;
-    print(texto);
     _textController.clear();
     _focusNode.requestFocus();
     final newMessage = ChatMessage(
