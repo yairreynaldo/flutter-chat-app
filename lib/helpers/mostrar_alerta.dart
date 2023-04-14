@@ -1,10 +1,10 @@
-//import 'dart:io';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
-//import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
 
 mostrarAlerta(BuildContext context, String titulo, String subtitulo) {
-  /* if (Platform.isIOS) {
+  if (Platform.isIOS) {
     showCupertinoDialog(
       context: context,
       builder: (_) => CupertinoAlertDialog(
@@ -19,7 +19,7 @@ mostrarAlerta(BuildContext context, String titulo, String subtitulo) {
         ],
       ),
     );
-  } */
+  }
   showDialog(
     context: context,
     builder: (_) => AlertDialog(

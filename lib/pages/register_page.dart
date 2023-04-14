@@ -7,6 +7,8 @@ import 'package:chat/widgets/custom_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../services/socket_service.dart';
+
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
 
@@ -51,6 +53,7 @@ class __FormState extends State<_Form> {
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
+    final socketService = Provider.of<SocketService>(context);
 
     final nameCtrl = TextEditingController();
     final emailCtrl = TextEditingController();
@@ -88,6 +91,7 @@ class __FormState extends State<_Form> {
                     final registerOK = await authService.register(nameCtrl.text.trim(), emailCtrl.text.trim(), passCtrl.text.trim());
                     if (registerOK == true) {
                       final navContext = context;
+                      socketService.connect();
                       Future.delayed(Duration.zero, () {
                         Navigator.pushReplacementNamed(navContext, 'usuarios');
                       });
